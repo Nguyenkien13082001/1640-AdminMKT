@@ -25,10 +25,13 @@ const EditAccount = (props) => {
     getAllFaculty();
   }, []);
 
+  console.log(dataEditAccount)
   useEffect(() => {
-    if (dataEditAccount) {
-      setUserData(dataEditAccount);
+    setUserData({
+      ...dataEditAccount,
+      faculty: dataEditAccount.faculty ? dataEditAccount.faculty._id : ''
     }
+    )
   }, [dataEditAccount]);
 
   const handleChange = (e) => {
