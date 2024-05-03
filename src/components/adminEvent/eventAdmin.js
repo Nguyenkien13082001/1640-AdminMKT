@@ -25,12 +25,12 @@ const Event = () => {
     const handleAddNew = async (event) => {
         try {
             const response = await addNewEvent(event);
-            console.log(">>> check",response);
+            console.log(">>> check", response);
             if (response.data) {
                 await getAllEvent()
                 setIsShowModalAdd(!isShowModalAdd)
                 toast.success("Create success!")
-            }else {
+            } else {
                 toast.warn("You need to enter all field!!!")
             }
         } catch (error) {
@@ -85,7 +85,7 @@ const Event = () => {
     }
 
     useEffect(() => {
-        getAllEvent(); 
+        getAllEvent();
         getAllCountEvent()
     }, [])
 
@@ -112,7 +112,7 @@ const Event = () => {
                         {
                             listEvent && listEvent.length > 0 &&
                             listEvent.map((item, index) => {
-                                const event = listCountEvent.find(events=>events.eventId===item._id)
+                                const event = listCountEvent.find(events => events.eventId === item._id)
                                 console.log(">>> check add", event);
                                 if (event === null) {
                                     toast.warning("Add success but dont have any post")
@@ -129,7 +129,7 @@ const Event = () => {
                                             </div>
                                             <div className="eventInform">
                                                 <div className="eventInform-item">{item.event_name}</div>
-                                                <div className="eventInform-item">{item.faculty.faculty_name}</div>
+                                                <div className="eventInform-item">{item.faculty ? item.faculty.faculty_name || "" : ""}</div>
                                                 <div className="eventInform-item">{item.event_description}</div>
                                                 <div className="eventInform-item">{item.first_closure_date}</div>
                                                 <div className="eventInform-item">{item.final_closure_date}</div>
