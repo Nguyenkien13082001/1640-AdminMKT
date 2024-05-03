@@ -122,15 +122,15 @@ const Event = () => {
                                         <div className="assignment">
                                             <div className="inform">
                                                 <div className="inform-item">Event name:</div>
-                                                <div className="inform-item">Faculty:</div>
                                                 <div className="inform-item">Description:</div>
+                                                <div className="inform-item">Faculty:</div>
                                                 <div className="inform-item">Date start:</div>
                                                 <div className="inform-item">Deadline:</div>
                                             </div>
                                             <div className="eventInform">
                                                 <div className="eventInform-item">{item.event_name}</div>
-                                                <div className="eventInform-item">{item.faculty ? item.faculty.faculty_name || "" : ""}</div>
                                                 <div className="eventInform-item">{item.event_description}</div>
+                                                <div className="eventInform-item">{item.faculty ? item.faculty.faculty_name || "" : ""}</div>
                                                 <div className="eventInform-item">{item.first_closure_date}</div>
                                                 <div className="eventInform-item">{item.final_closure_date}</div>
                                             </div>
